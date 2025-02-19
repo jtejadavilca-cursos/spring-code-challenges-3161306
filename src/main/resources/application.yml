@@ -1,0 +1,34 @@
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.username=admin
+#spring.datasource.password=passwordSecret
+#spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+#spring.h2.console.enabled=true
+#spring.jpa.hibernate.ddl-auto=none
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: admin
+    password: passwordSecret
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,order-by-status"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  aop:
+    enabled: false
